@@ -1,0 +1,22 @@
+To: "Grant and Melody" <answerphoto@gmail.com>
+From: "{firstname} {lastname}" <{email}>
+MIME-Version: 1.0
+Subject: "Wedding RSVP"
+
+Name: {firstname} {lastname}
+Email: {email}
+RSVP: {rsvp}
+Guest: {guest}
+Vegetarian: {vegetarian}
+Message: {comment}
+
+
+
+----------------------------
+{env_year}-{env_month}-{env_day} ({env_hour}:{env_minute}:{env_second})
+
+{env_remote_address} ({env_remote_host})
+
+{env_user_agent}
+
+Domain: {domain}

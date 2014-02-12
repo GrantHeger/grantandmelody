@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Grant and Melody</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Grant and Melody's Wedding Page" />
+        <meta name="keywords" content="slit slider, plugin, css3, transitions, jquery, fullscreen, autoplay" />
+        <meta name="author" content="Grant Heger" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="./css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="./css/style.css" />
+        <link rel="stylesheet" type="text/css" href="./css/custom.css" />
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.min.css" />
+		<script type="text/javascript" src="./js/modernizr.custom.79639.js"></script>
+        <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+        <script src="./scripts/jquery.min.js"></script>
+		<noscript>
+			<link rel="stylesheet" type="text/css" href="./css/styleNoJS.css" />
+		</noscript>
+    
+  <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
+  <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+  <!--[if lte IE 8]>
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css' rel='stylesheet' >
+  <![endif]-->
+  <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+
+    </head>
+    <body style="overflow: hidden">
+            <nav class="navbar" style="width: 105%; left: -4px">
+                <ul class="pull-left">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="info.html">Information</a>
+                    </li>
+                    <li>
+                        <a href="rsvp.php">RSVP</a>
+                    </li>
+                    <li>
+                        <a href="http://grantandmelody.tumblr.com">Blog</a>
+                    </li>
+                </ul>
+			</nav>
+        <div class="container demo-1" style="width: 100%;">
+            <div id="slider" class="sl-slider-wrapper">
+
+                <div class="sl-slider">
+
+                    <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+                        <div class="sl-slide-inner">
+                            <div class="container-fluid">
+                                <div class="row-fluid">
+                                    <div class="col-md-4 toDo">
+                                        <div class="widget wblue">
+                                            <div class="widget-head" style="border-radius: 5px 5px 0px 0px">Things to Do</div>
+                                            <div class="widget-content text-center text-info">
+                                                Want to get outdoors?
+                                            </div>
+                                            <div class="widget-foot">
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 toEat">
+                                        <div class="widget wblue">
+                                            <div class="widget-head" style="border-radius: 5px 5px 0px 0px">Things to Eat</div>
+                                            <div class="widget-content text-center text-info">
+                                                Want to go fancy or want to relive college glory days?
+                                            </div>
+                                            <div class="widget-foot">
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 toStay">
+                                        <div class="widget wblue" >
+                                            <div class="widget-head" style="border-radius: 5px 5px 0px 0px">Places to Stay</div>
+                                            <div class="widget-content text-center text-info">
+                                                So many options!
+                                            </div>
+                                            <div class="widget-foot">
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="deco">
+                                <div>
+                                    <img class="picture" src="./images/holiver.png">
+                                </div>
+                            </div>
+                            <h2>Grant and Melody</h2>
+                            <blockquote><p>Welcome to our wedding website.  Contained within you will find all of our information: Date - Venue - Our Story.</br> Browse around, and join in our happiness!</p></blockquote> -->
+                        </div>
+                    </div>
+
+                </div><!-- /sl-slider -->
+
+                <!-- <nav id="nav-arrows" class="nav-arrows">
+                    <span class="nav-arrow-prev">Previous</span>
+                    <span class="nav-arrow-next">Next</span>
+                </nav>
+
+                <nav id="nav-dots" class="nav-dots">
+                    <span class="nav-dot-current"></span>
+                </nav> -->
+
+            </div><!-- /slider-wrapper -->
+
+        </div>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
+		<script type="text/javascript">	
+			$(function() {
+			
+				var Page = (function() {
+
+					var $navArrows = $( '#nav-arrows' ),
+						$nav = $( '#nav-dots > span' ),
+						slitslider = $( '#slider' ).slitslider( {
+							onBeforeChange : function( slide, pos ) {
+
+								$nav.removeClass( 'nav-dot-current' );
+								$nav.eq( pos ).addClass( 'nav-dot-current' );
+
+							}
+						} ),
+
+						init = function() {
+
+							initEvents();
+							
+						},
+						initEvents = function() {
+
+							// add navigation events
+							$navArrows.children( ':last' ).on( 'click', function() {
+
+								slitslider.next();
+								return false;
+
+							} );
+
+							$navArrows.children( ':first' ).on( 'click', function() {
+								
+								slitslider.previous();
+								return false;
+
+							} );
+
+							$nav.each( function( i ) {
+							
+								$( this ).on( 'click', function( event ) {
+									
+									var $dot = $( this );
+									
+									if( !slitslider.isActive() ) {
+
+										$nav.removeClass( 'nav-dot-current' );
+										$dot.addClass( 'nav-dot-current' );
+									
+									}
+									
+									slitslider.jump( i + 1 );
+									return false;
+								
+								} );
+								
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+
+				/**
+				 * Notes: 
+				 * 
+				 * example how to add items:
+				 */
+
+				/*
+				
+				var $items  = $('<div class="sl-slide sl-slide-color-2" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1"><div class="sl-slide-inner bg-1"><div class="sl-deco" data-icon="t"></div><h2>some text</h2><blockquote><p>bla bla</p><cite>Margi Clarke</cite></blockquote></div></div>');
+				
+				// call the plugin's add method
+				ss.add($items);
+
+				*/
+			
+			});
+		</script>
+	</body>
+<!-- 
+
+	                            .do-"""""'-o..                         
+                             .o""            ""..                       
+                           ,,''                 ``b.                   
+                          d'                      ``b                   
+                         d`d:                       `b.                 
+                        ,,dP                         `Y.               
+                       d`88                           `8.               
+ ooooooooooooooooood888`88'                            `88888888888bo, 
+d"""    `""""""""""""Y:d8P                              8,          `b 
+8                    P,88b                             ,`8           8 
+8                   ::d888,                           ,8:8.          8 
+:                   dY88888                           `' ::          8 
+:                   8:8888                               `b          8 
+:                   Pd88P',...                     ,d888o.8          8 
+:                   :88'dd888888o.                d8888`88:          8 
+:                  ,:Y:d8888888888b             ,d88888:88:          8 
+:                  :::b88d888888888b.          ,d888888bY8b          8 
+                    b:P8;888888888888.        ,88888888888P          8 
+                    8:b88888888888888:        888888888888'          8 
+                    8:8.8888888888888:        Y8888888888P           8 
+,                   YP88d8888888888P'          ""888888"Y            8 
+:                   :bY8888P"""""''                     :            8 
+:                    8'8888'                            d            8 
+:                    :bY888,                           ,P            8 
+:                     Y,8888           d.  ,-         ,8'            8 
+:                     `8)888:           '            ,P'             8 
+:                      `88888.          ,...        ,P               8 
+:                       `Y8888,       ,888888o     ,P                8 
+:                         Y888b      ,88888888    ,P'                8 
+:                          `888b    ,888888888   ,,'                 8 
+:                           `Y88b  dPY888888OP   :'                  8 
+:                             :88.,'.   `' `8P-"b.                   8 
+:.                             )8P,   ,b '  -   ``b                  8 
+::                            :':   d,'d`b, .  - ,db                 8 
+::                            `b. dP' d8':      d88'                 8 
+::                             '8P" d8P' 8 -  d88P'                  8 
+::                            d,' ,d8'  ''  dd88'                    8 
+::                           d'   8P'  d' dd88'8                     8 
+ :                          ,:   `'   d:ddO8P' `b.                   8 
+ :                  ,dooood88: ,    ,d8888""    ```b.                8 
+ :               .o8"'""""""Y8.b    8 `"''    .o'  `"""ob.           8 
+ :              dP'         `8:     K       dP''        "`Yo.        8 
+ :             dP            88     8b.   ,d'              ``b       8 
+ :             8.            8P     8""'  `"                 :.      8 
+ :            :8:           :8'    ,:                        ::      8 
+ :            :8:           d:    d'                         ::      8 
+ :            :8:          dP   ,,'                          ::      8 
+ :            `8:     :b  dP   ,,                            ::      8 
+ :            ,8b     :8 dP   ,,                             d       8 
+ :            :8P     :8dP    d'                       d     8       8 
+ :            :8:     d8P    d'                      d88    :P       8 
+ :            d8'    ,88'   ,P                     ,d888    d'       8 
+ :            88     dP'   ,P                      d8888b   8        8 
+ '           ,8:   ,dP'    8.                     d8''88'  :8        8 
+             :8   d8P'    d88b                   d"'  88   :8        8 
+             d: ,d8P'    ,8P""".                      88   :P        8 
+             8 ,88P'     d'                           88   ::        8 
+            ,8 d8P       8                            88   ::        8 
+            d: 8P       ,:  -hrr-                    :88   ::        8 
+            8',8:,d     d'                           :8:   ::        8 
+           ,8,8P'8'    ,8                            :8'   ::        8 
+           :8`' d'     d'                            :8    ::        8 
+           `8  ,P     :8                             :8:   ::        8 
+            8, `      d8.                            :8:   8:        8 
+            :8       d88:                            d8:   8         8 
+ ,          `8,     d8888                            88b   8         8 
+ :           88   ,d::888                            888   Y:        8 
+ :           YK,oo8P :888                            888.  `b        8 
+ :           `8888P  :888:                          ,888:   Y,       8 
+ :            ``'"   `888b                          :888:   `b       8 
+ :                    8888                           888:    ::      8 
+ :                    8888:                          888b     Y.     8, 
+ :                    8888b                          :888     `b     8: 
+ :                    88888.                         `888,     Y     8: 
+ ``ob...............--"""""'----------------------`""""""""'"""`'"""""
+
+
+
+
+Why are you still here... go do something...
+ --></html>
