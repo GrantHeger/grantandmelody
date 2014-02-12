@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Grant and Melody's Wedding Page" />
+        <meta name="keywords" content="slit slider, plugin, css3, transitions, jquery, fullscreen, autoplay" />
+        <meta name="author" content="Grant Heger" />
+        <link rel="shortcut icon" href="./favicon.ico"> 
+    <link rel="stylesheet" type="text/css" href="./css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="./css/style.css" />
+        <link rel="stylesheet" type="text/css" href="./css/custom.css" />
+    <script type="text/javascript" src="./js/modernizr.custom.79639.js"></script>
+    <noscript>
+      <link rel="stylesheet" type="text/css" href="./css/styleNoJS.css" />
+    </noscript>
+<!--META-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RSVP</title>
+
+<!--STYLESHEETS-->
+<link href="css/rsvp.css" rel="stylesheet" type="text/css" />
+
+<!--SCRIPTS-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--Slider-in icons-->
+</head>
+<body style="overflow: hidden">
+    <nav class="navbar">
+        <ul class="pull-left">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="http://grantandmelody.tumblr.com">Blog</a>
+            </li>
+        </ul>
+    </nav>
+        <div class="container demo-1">
+    </div>
+
+  <!-- Display error messages (required fields etc.) -->
+  <LOOP NAME="message">
+    <blockquote style="color:red;">
+      <p style="font-weight:bold;">{message}</p>
+      <blockquote>{fields}</blockquote>
+    </blockquote>
+  </LOOP NAME="message">
+
+
+  <!-- Display posted information -->
+  <LOOP NAME="display_data">
+
+    <table border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td class="index">{txt_firstname}</td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td>{firstname}</td>
+      </tr>
+      <tr>
+        <td class="index">{txt_lastname}</td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td>{lastname}</td>
+      </tr>
+      <tr>
+        <td class="index">{txt_email}</td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td>{email}</td>
+      </tr>
+      <tr>
+        <td class="index">{txt_subject}</td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td>{subject}</td>
+      </tr>
+      <tr valign="top">
+        <td class="index">{txt_comment}</td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td>{comment}</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </LOOP NAME="display_data">
+
+    <!-- Display form -->
+    <!--<IF NAME="Grant and Melody's Wedding RSVP"> -->
+    <form class="login-form" action="{script_self}" method="post">
+        <input type="hidden" name="required_fields" value="email, rsvp" />
+        <input type="hidden" name="email_fields" value="email" />
+        <input type="hidden" name="html_template" value="form.tpl.html" />
+        <input type="hidden" name="mail_template" value="mail.tpl.txt" />
+        <input type="hidden" name="thanks" value="./success.html" />
+        <!-- <input type="hidden" name="error_page" value="./docu/error.html" /> -->
+
+        <div class="content">
+            <table>
+                <tr style="display: inline-block">
+                    <td><div class="question" style="width: 98%">First name:
+                    <input name="firstname" type="text" class="input username" value="{firstname}" onfocus="this.value=''" /></div></td>
+                    <td><div class="question" style="width: 98%">Last name:
+                    <input name="lastname" type="text" class="input username" value="{lastname}" onfocus="this.value=''" />
+                    </div></td>
+                </tr>
+            </table>
+            <div class="question">Your email address:</div>
+            <input name="email" type="text" class="input username" value="{email}" onfocus="this.value=''" />
+            <div class="question">Will you be joining us?</div>
+            <input name="rsvp" type="text" class="input username" value="{rsvp}" onfocus="this.value=''" />
+            <div class="question">Will you be bringing a guest?</div>
+            <input name="guest" type="text" class="input username" value="{guest}" onfocus="this.value=''" />
+            <div class="question">Are you vegetarian?</div>
+            <input name="vegetarian" type="text" class="input username" value="{vegetarian}" onfocus="this.value=''" />
+            <div class="question">Do you have any messages you would like to send along?</div>
+            <input name="comment" type="text" class="input username" value="{comment}" onfocus="this.value=''" />
+        </div>
+        <div class="footer">
+            <!--LOGIN BUTTON--><input type="submit" name="send" value="RSVP!" class="button" /><!--END LOGIN BUTTON-->
+        </div>
+    </form>
+
+</body>
+</html>

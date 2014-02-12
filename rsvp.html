@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Grant and Melody's Wedding Page" />
+        <meta name="keywords" content="slit slider, plugin, css3, transitions, jquery, fullscreen, autoplay" />
+        <meta name="author" content="Grant Heger" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="./css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="./css/style.css" />
+        <link rel="stylesheet" type="text/css" href="./css/custom.css" />
+		<script type="text/javascript" src="./js/modernizr.custom.79639.js"></script>
+		<noscript>
+			<link rel="stylesheet" type="text/css" href="./css/styleNoJS.css" />
+		</noscript>
+<!--META-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RSVP</title>
+
+<!--STYLESHEETS-->
+<link href="css/rsvp.css" rel="stylesheet" type="text/css" />
+
+<!--SCRIPTS-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--Slider-in icons-->
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".username").focus(function() {
+		$(".user-icon").css("left","-48px");
+	});
+	$(".username").blur(function() {
+		$(".user-icon").css("left","0px");
+	});
+	
+	$(".password").focus(function() {
+		$(".pass-icon").css("left","-48px");
+	});
+	$(".password").blur(function() {
+		$(".pass-icon").css("left","0px");
+	});
+});
+</script>
+
+</head>
+<body>
+<div class="container demo-1">
+
+            <nav class="codrops-demos">
+				<a class="current-demo" href="index.html">Home</a>
+				<a href="rsvp.html">RSVP</a>
+				<a href="http://grantandmelody.tumblr.com">Blog</a>
+			</nav>
+</div>
+<!--GRADIENT--><div class="gradient"></div><!--END GRADIENT-->
+<!--WRAPPER-->
+<div id="wrapper">
+
+	<!--SLIDE-IN ICONS-->
+<!--    <div class="user-icon"></div> -->
+<!--    <div class="pass-icon"></div> -->
+    <!--END SLIDE-IN ICONS-->
+
+<!--LOGIN FORM-->
+<form name="RSVP-form" class="login-form" action="/webformmailer.php" method="POST" enctype="text/plain">
+
+	<input type="hidden" name="subject" value="RSVP Submission" /> 
+	<input type="hidden" name="redirect" value="success.html" />
+
+	<!--HEADER-->
+    <div class="header">
+    <!--TITLE--><h1>RSVP</h1><!--END TITLE-->
+    <!--DESCRIPTION--><span>Test</span><!--END DESCRIPTION-->
+    </div>
+    <!--END HEADER-->
+	
+	<!--CONTENT-->
+    <div class="content">
+	<!--Name--><div class="question">Name</div>
+	<input name="name" type="text" class="input username" value="Name" onfocus="this.value=''" />
+    <!--Attending--><div class="question">Are you attending?</div>
+    <input name="attending" type="text" class="input username" value="Yes or No?" onfocus="this.value=''" />
+    <!--Plus One--><div class="question">Will you be bringing a guest?</div>
+    <input name="plus_one" type="text" class="input username" value="Yes or No?" onfocus="this.value=''" />
+    <!--Email--><div class="question">Email Address</div>
+    <input name="email_address" type="text" class="input username" value="Email Address" onfocus="this.value=''" />
+    <!--Food--><div class="question">Are you vegetarian?</div>
+    <input name="food_type" type="text" class="input username" value="Yes or No?" onfocus="this.value=''" />
+    </div>
+    
+    <!--END CONTENT-->
+    
+    <!--FOOTER-->
+    <div class="footer">
+    <!--LOGIN BUTTON--><input type="submit" name="submit" value="RSVP!" class="button" /><!--END LOGIN BUTTON-->
+    </div>
+    <!--END FOOTER-->
+
+</form>
+<!--END LOGIN FORM-->
+
+</div>
+<!--END WRAPPER-->
+
+
+
+</body>
+</html>
